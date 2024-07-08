@@ -1,0 +1,7 @@
+
+.gallerySlider{
+    width: 100%;
+    height: fit-content;
+}
+.gallerySlider .swiper-wrapper{  display: flex; }
+.gallerySlider .swiper-slide img{width: 100%; height: 100%;}

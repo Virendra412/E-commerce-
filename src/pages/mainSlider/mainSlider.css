@@ -1,0 +1,10 @@
+.mainSlider_wrapper{width: 100%; max-width: 100vw;}
+.main_slider{width: 100%; height: fit-content;}
+.main_slider .swiper-slide {width: 100%; height: auto;}
+.main_slider .swiper-slide img{width: 100%; aspect-ratio: 1/1;}
+
+@media (max-width:800px){
+    .main_slider .swiper-button-next,.main_slider .swiper-button-prev{
+        display: none;
+    }
+}

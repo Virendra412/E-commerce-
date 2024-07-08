@@ -1,0 +1,25 @@
+.collections{
+   margin-block: 8vh;
+}
+.coll_images div{
+    flex-basis: 50%;
+}
+.coll_images img{
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit:cover ;
+    object-position: center;
+
+}
+.coll_info h4{
+    margin-top: 15px;
+    margin-bottom: 0;
+    font-stretch:narrower;
+    /* letter-spacing: -1px; */
+}
+
+@media (max-width:750px){
+    .collections .coll_images{
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,28 @@
+header{width: 100%; height:auto; margin: auto; padding: 0px 0px; background: #fff; padding: 15px; border-bottom: 1px solid rgb(220, 220, 220);}
+.headerWrapper{transition: all 0.3s ease-in-out; background: #fff;  top: 0px; left: 0px; width: 100%; z-index: 1000;}
+
+.headerWrapper .banner{
+   
+    overflow: hidden;
+}
+.headerWrapper .ban_buttons a{
+    width: fit-content;
+}
+.banner h1{
+    margin-bottom: 0;
+}
+.headerWrapper .banner img{width: 100%; ; object-fit: cover; object-position: 15% 50%;}
+.banner .banner_text{position: absolute; top: 50%;transform: translateY(-50%); color: white; display: flex; justify-content: center; align-items: center; flex-direction: column; right: 5%;}
+
+.banner .banner_text h1{font-weight: 600;}
+.banner .banner_text h3{font-weight: 400; font-size: clamp(16px,3vw,27px);}
+
+@media (max-width:500px){
+    .banner .banner_text{
+        position: relative !important;
+        transform: translateY(0%);color: black;
+    right: 0;
+    }
+    .headerWrapper .banner img{width: 100%;aspect-ratio: 1/1; object-fit: cover; object-position: 18% 50%;}
+    .headerWrapper{margin-bottom: 8%;}
+}

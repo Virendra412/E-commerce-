@@ -1,0 +1,42 @@
+.swiper {
+    width: 100%;
+    height: fit-content;
+   
+    position: relative;
+    padding:0px 0 10px 0;
+  }
+
+  .mySwiper .swiper-slide{
+    overflow: hidden;
+    display: flex;
+    gap: 10px;
+  }
+  .mySwiper .swiper-scrollbar {
+    position: absolute;
+    display: block !important;
+    
+    height: 5px !important;
+  
+    bottom: 10px !important;
+    z-index: 10;
+    background-color:#DFE0E1;
+  }
+  .mySwiper  .swiper-scrollbar .swiper-scrollbar-drag {
+    background-color: #50565E;
+  }
+   .swiper-button-next,.swiper-button-prev{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #DFE0E1;
+  }
+    .swiper-button-next::after,.swiper-button-prev::after{
+   
+    font-weight: 1000;
+    display: block;
+    font-size: 15px;
+    color: black;
+  border-radius: 50%;
+  }
+
+  

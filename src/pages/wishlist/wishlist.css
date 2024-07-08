@@ -1,0 +1,25 @@
+.wishlist{
+    /* background: pink; */
+    min-height: 70vh;
+    padding: 5% 5%;
+}
+
+.wishlist_wrapper{
+    max-width: 1100px;
+    margin: auto;
+    padding: 3%;
+    border: 2px solid rgb(235, 235, 235);
+    border-radius: 10px;
+}
+ .emptyWishlist{
+    
+    display: flex;justify-content: center;align-items: center; flex-direction: column; min-height: 60vh;
+    
+}
+.wishlist_wrapper .product{display: flex; gap: 4%; align-items: center;}
+.wishlist_wrapper .product .img_sec{max-width: 250px;aspect-ratio: 1/1; }
+.wishlist_wrapper .product .img_sec img{width: 100%;aspect-ratio: 1/1;}
+.wishlist_wrapper .product .info_sec{flex-grow: 1; min-width: 50%;}
+.wishlist_wrapper .product .info_sec h4{font-size: clamp(18px,4vw,23px);}
+.wishlist_wrapper .product .info_sec h5{font-size: clamp(16px,3.5vw,21px);}
+.wishlist_wrapper .product .info_sec p{font-size: clamp(14px,3.2vw,18px); color: rgb(92, 92, 92);}

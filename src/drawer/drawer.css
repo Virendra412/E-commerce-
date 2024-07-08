@@ -1,0 +1,48 @@
+.MuiPaper-root{
+    
+  background: #000;
+}
+.MuiDrawer-paper{
+    width: 100%;
+
+    top: 80px !important;
+}
+.MuiDrawer-root{
+ 
+   .closer{
+    background: rgb(242, 242, 242);
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    
+   }
+   .icon {
+    position: absolute;
+    left: 5%;
+   }
+   h1{
+    font-weight: 300;
+    margin-bottom: 0%;
+    color: black;
+    letter-spacing: 0.5px;
+   }
+}
+
+.MuiDrawer-root .Drawer-content{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.MuiDrawer-root .Drawer-content ul{
+    width: 80%;
+    max-width: 400px;
+}
+.MuiDrawer-root .Drawer-content li{font-size: 18px; font-weight: 400; letter-spacing: 0.7px; border-bottom: 0.1px solid rgb(174, 174, 174); padding-block: 8px; color: black; position: relative;}
+
+.MuiDrawer-root .Drawer-content li .dropIcon{position: absolute; right: 1%;}
+.MuiModal-backdrop{
+    background: transparent !important;
+}
+.drawer_links a{justify-content: flex-start !important;}
