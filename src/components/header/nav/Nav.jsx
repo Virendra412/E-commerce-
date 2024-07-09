@@ -16,6 +16,7 @@ import { globalState } from "../../context/Context.jsx";
 import { OpenWithSharp } from "@mui/icons-material";
 import { ClickAwayListener } from "@mui/material";
 import { v4 as uuid } from "uuid";
+import { Flash} from "../../Flash/Flash.jsx";
 
 export const Nav = () => {
   const {cart,wishlist}= globalState()
@@ -51,7 +52,8 @@ const [drawerData, setDrawerData] = useState(navData[0])
     })
    }
 
-  return (
+  return (<>
+    <Flash/>
     <nav className="container-fluid ">
       <div className={`navWrapper d-flex justify-content-between ${isOpen?"menu_open":""} `}>
         <div className="left d-flex gap-4">
@@ -112,5 +114,7 @@ const [drawerData, setDrawerData] = useState(navData[0])
         </div>
         
     </nav>
+    
+    </>
   );
 }

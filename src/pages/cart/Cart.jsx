@@ -50,8 +50,7 @@ const Cart = () => {
     
  
   const [total, setTotal] = useState(0)
-  const [cartData, setCartData] = useState(null)
-  const [fetchAgain, setFetchAgain] = useState(false)
+  const [isLoading, setIsLoading] = useState(false)
   const {cart,setCart,user,userLoading,token}=globalState()
   
 
@@ -69,8 +68,16 @@ const Cart = () => {
  
   async function PaymentHandler(e) {
     e.preventDefault()
-    const order = await axios.post('http://localhost:3000/razorpay/order', { amount: total*100, currency: "INR" }).then(res => res.data)
-    console.log(order);
+    var order;
+    try {
+      setIsLoading(true)
+      order = await axios.post(`https://puma-server.onrender.com/razorpay/order`, { amount: total * 100, currency: "INR" }).then(res => res.data)
+      setIsLoading(false)
+    // console.log(order);
+    } catch (error) {
+      setIsLoading(false)
+    }
+    
 
     var options = {
       "key": "rzp_test_vVIiPAUmcXCay9", // Enter the Key ID generated from the Dashboard
@@ -123,7 +130,7 @@ const Cart = () => {
         <Loader /> :
       
         <div className="cartWrapper" key={'modal'}>
-            
+          <MyBackdrop isOpen={isLoading}/>  
     <h2>MY SHOPPING CART</h2>
       {cart?.length>0? <section className="cart">
         <div className="products d-grid gap-3">

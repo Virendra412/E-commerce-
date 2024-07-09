@@ -5,10 +5,11 @@ import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
 import MenuBookIcon from '@mui/icons-material/MenuBook';
 import Address from './address/Address';
 import Button from '../../components/Button/Button';
+import LoaderComponent from '../../components/loader/LoaderComponent'
 
 
 export const Account = () => {
-  const { user,setUser,setToken,setCart } = globalState()
+  const { user,setUser,setToken,setCart,userLoading } = globalState()
   
   function Logout() {
     localStorage.removeItem('userToken')
@@ -19,6 +20,7 @@ export const Account = () => {
     
   }
   return (<>
+    <LoaderComponent isLoading={userLoading}>
     {user._id ? 
       <div className="myAccount px-5  my-5 m-auto" style={{minHeight:'70vh'}}>
         <h1>My Account</h1>
@@ -31,21 +33,14 @@ export const Account = () => {
             
             
           </div>
-          <div className="address flex-grow-1">
+          {/* <div className="address flex-grow-1">
           <h3 className='border-bottom p-2 d-flex align-items-center' style={{ letterSpacing: '0.7px' }}><MenuBookIcon sx={{ fontSize: '35px', marginRight: '5px' }} /> Address Book</h3>
           <Address/>
-          </div>
+          </div> */}
         </div>
       </div>
-     
-      
-      
-      
-      
-      
-      
-      : <Auth />}
-    
+ : <Auth />}
+    </LoaderComponent>
     </>
   )
 }
