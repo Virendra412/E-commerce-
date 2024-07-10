@@ -10,7 +10,7 @@ const MyContextProvider = ({ children }) => {
     const [token,setToken]= useState(localStorage.getItem('userToken'))
     const [cart, setCart] = useState([])
     const [wishlist, setWishlist] = useState([])
-    const [userLoading, setUserLoading]= useState(true)
+    const [userLoading, setUserLoading]= useState(false)
 
 
 
