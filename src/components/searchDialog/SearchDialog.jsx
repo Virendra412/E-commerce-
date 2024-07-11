@@ -116,8 +116,8 @@ export default function SearchDialog({ dialogToggler, isOpen,closeModal }) {
         <div className="searchResult">
                  
         {result?.map(item => { 
-          return (<div className='product_search_card d-flex gap-3 align-items-center' ><Link to={`/product/${item._id}`} onClick={dialogToggler}>
-            <div className="product_image" style={{ width:'100px',height:'100px'}}><img style={{width:'100%', height:'100%'}} src={item.images[0]}  /></div>
+          return (<div className='product_search_card d-flex align-items-center' ><Link to={`/product/${item._id}`} onClick={dialogToggler}>
+            <div className="product_image flex-shrink-0" style={{ width:'100px',height:'100px',marginInlineEnd:'8px'}}><img style={{width:'100%', height:'100%'}} src={item.images[0]}  /></div>
             <div className="product_info">
               <h6>{item.title}</h6>
               <div className="prices d-flex gap-3"><p className='text-danger fw-bold mb-0'>₹{item.price.toLocaleString('en-US') }</p>
