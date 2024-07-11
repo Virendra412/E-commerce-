@@ -13,6 +13,7 @@ import MyBackdrop from "../backdrop/MyBackdrop";
 import { Price } from "../price/Price";
 import { toast } from "react-toastify";
 import { globalState } from "../context/Context";
+import LoaderComponent from '../loader/LoaderComponent'
 
 function debounce(fn, ms) {
   let timer;
@@ -28,7 +29,8 @@ function debounce(fn, ms) {
 const ShowProduct = () => {
   const [viewWidth, setViewWidth] = useState(window.innerWidth);
   const [productData, setProductData] = useState(null);
-  const { setCart,user,token,setWishlist}=globalState()
+  const { setCart, user, token, setWishlist } = globalState()
+  const [loading, setLoading] = useState(false)
 
   const location = useLocation();
   const { productId } = useParams();
@@ -40,8 +42,15 @@ const ShowProduct = () => {
   useEffect(() => {
     if (!location.state) {
       (async () => {
-        const res = await getProductbyID(productId);
+        setLoading(true)
+        try {
+          const res = await getProductbyID(productId);
         setProductData(res);
+        setLoading(false)
+        } catch (error) {
+          setLoading(false)
+        }
+        
       })();
     } else {
       setProductData(location.state);
@@ -103,6 +112,7 @@ const ShowProduct = () => {
     }
 
   return (<>
+    <LoaderComponent isLoading={loading}>
     <MyBackdrop isOpen={isOpen}/>
     <div className=" showProduct container-fluid">
       <h5 className="px-4 mt-3 d-flex align-items-center">
@@ -164,21 +174,15 @@ const ShowProduct = () => {
       </div>
 
       <div className="productStory">
-        <div className="story">
-          <h5>Product Story</h5>
-          <p>{productData?.description}</p>
-        </div>
+        <div className="story"> <h5>Product Story</h5> <p>{productData?.description}</p> </div>
 
         <div className="details">
           <h5>Details</h5>
-          <ul>
-            {productData?.details.map((e) => (
-              <li key={uuid()}>{e}</li>
-            ))}
-          </ul>
+          <ul> {productData?.details.map((e) => ( <li key={uuid()}>{e}</li> ))} </ul>
         </div>
       </div>
     </div>
+      </LoaderComponent>
     </>
   );
 };
