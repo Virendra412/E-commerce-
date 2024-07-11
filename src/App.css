@@ -75,3 +75,14 @@ display:  none !important;
 /* .product_loader{
 
 } */
+
+::-webkit-scrollbar{
+    width: 4px;
+}
+::-webkit-scrollbar-track {
+    background: #ffffff;
+  }
+  ::-webkit-scrollbar-thumb {
+    background:rgb(158, 158, 158);
+    border-radius: 2px;
+  }

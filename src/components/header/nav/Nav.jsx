@@ -13,15 +13,17 @@ import navData from "../../../assets/navbar.js"
 import { Link } from "react-router-dom";
 import { MyDrawer } from "../../../drawer/MyDrawer.jsx";
 import { globalState } from "../../context/Context.jsx";
-import { OpenWithSharp } from "@mui/icons-material";
+import SearchIcon from '@mui/icons-material/Search';
 import { ClickAwayListener } from "@mui/material";
 import { v4 as uuid } from "uuid";
+import SearchDialog from "../../searchDialog/SearchDialog.jsx";
 import { Flash} from "../../Flash/Flash.jsx";
 
 export const Nav = () => {
   const {cart,wishlist}= globalState()
   const [isOpen, setIsOpen] = useState(false)
   const [drawer, setDrawer] = useState(false)
+  const [isSearchOpen,setIsSearchOpen]= useState(false)
 
   
 const [drawerData, setDrawerData] = useState(navData[0])
@@ -42,6 +44,10 @@ const [drawerData, setDrawerData] = useState(navData[0])
     setDrawer(false)
   }
 
+  function SearchDialogToggler() {
+    console.log('toogle workinh');
+    setIsSearchOpen(prev=>!prev)
+  }
 
   function CloseDropDown() {
     document.querySelectorAll('.navItems').forEach(e => {
@@ -79,7 +85,10 @@ const [drawerData, setDrawerData] = useState(navData[0])
           })}
 
         </div>
-        <div className="right d-flex pe-2">
+        <div className="right d-flex pe-1">
+          <div className="navItems searchBox">
+            <div className="categories"> <SearchDialog isOpen={isSearchOpen} dialogToggler={SearchDialogToggler} closeModal={()=>SearchDialogToggler(false)} /> </div>
+          </div>
           <div className="navItems px-3">
             <div className="categories">
             <Link to='/wishlist' state={{ name: 'uday' }} >

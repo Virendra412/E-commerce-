@@ -1,0 +1,32 @@
+.SearchDialog .searchResult{ display: grid; grid-template-columns: repeat(auto-fit,minmax(300px,1fr)); column-gap: 20px;row-gap: 5px; padding: 2% 3%;}
+.SearchDialog .MuiBackdrop-root {
+    background:  rgba(255,255,255,0.1) !important;
+    backdrop-filter: blur(2px);
+}
+.SearchDialog .searchResult a{
+    width: auto;
+}
+.SearchDialog ._loader{
+    width: 100%;
+    height: 100%;
+    font-size: 100px;
+    display: grid;
+    font-weight: 900;
+    color: rgb(239, 239, 239);
+    place-content: center;
+}
+.SearchDialog ._loader.loading{
+    color: rgb(127, 127, 127);
+    animation: loading 2s linear infinite;
+}
+
+@keyframes loading {
+
+    0%{
+        opacity: 1;
+    }
+        50%{
+            opacity: 0.5;
+        }
+        100%{opacity: 1;}
+}

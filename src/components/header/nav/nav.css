@@ -44,25 +44,16 @@ nav .logo img{
     object-fit: cover !important;
  
 }
-nav .navItems:hover .nav_dropdown {
-    transition: max-height 2s ease-out;
-    transition-delay: 0.5s;
-    
-    max-height: 2000px ;
-}
+nav .navItems:hover .nav_dropdown { transition: max-height 2s ease-out; transition-delay: 0.5s; max-height: 2000px ; }
+
 nav .nav_dropdown{ display: block; width: 100%; max-height:0px ; position: absolute; background: white; top: 100%; left: 0%; overflow: hidden;
     transition: max-height 0.5s ease-out;  box-shadow: 0px 0 10px rgb(125, 125, 125); }
 
 nav .inner_dropdown{ color: rgb(0, 0, 0); display: flex; justify-content: start; align-items: start; gap: 30px; margin: 2% 5%; }
 
-nav .nav_dropdown .cat_sections{
-    width: 250px;
-    
-}
-nav .nav_dropdown .cat_sections h5{
-    border-bottom: 2px solid var(--bgBlack);
-    line-height: 2;
-}
+nav .nav_dropdown .cat_sections{ width: 250px; }
+
+nav .nav_dropdown .cat_sections h5{ border-bottom: 2px solid var(--bgBlack); line-height: 2; }
 nav .nav_dropdown .cat_sections ul{ padding: 0; }
 nav .nav_dropdown .cat_sections ul li{ list-style: none; color: grey; }
 nav .right .navItems{ position: relative; }
@@ -102,7 +93,7 @@ nav .navItems.menuButton span{ display: inline-block;transform: translateY(1px);
 }
 @media (max-width:750px){
    .right .navItems svg{ font-size: 20px; } 
-   .right .navItems{padding-inline: 8px!important;}
+   .right .navItems:not(.searchBox){padding-inline: 8px!important;}
    nav .left{gap: 0px !important;}
    nav .menu_open{
     background: white !important;
