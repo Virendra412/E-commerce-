@@ -317,7 +317,7 @@ const Footer = () => {
         <div className="copyright ">
           <p>
             &copy;PUMA INDIA LTD,2024. ALL RIGHT RESERVED. <br />
-            DESIGNED BY UDAY PRATAP
+            DESIGNED BY VIRENDRA PRATAP
           </p>
         </div>
       </div>

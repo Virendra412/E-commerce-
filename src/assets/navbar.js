@@ -42,10 +42,25 @@ const navs = [
         title: "Gender",
         hasChild: true,
 
-        sub_cat: [ { title: "Men", url: "/mens/mens-shoes/mens-shoes-sneakers" }, { title: "Women", url: "/womens/womens-shoes/womens-shoes-running" } ],
-      },
+        sub_cat: [ { title: "Men", url: "/mens/mens-shoes/mens-shoes-sneakers" }, { title: "Women", url: "/womens/womens-shoes/womens-shoes-running" } ]
+      }
       
     ],
   },
 ];
 export default navs;
+var result=[]
+const res = navs.forEach(dat => {
+ 
+  dat.categories.forEach(cat => {
+    cat.sub_cat.forEach(sub => {
+      if (sub.title.toLowerCase().includes('')) {
+        result.push({title: sub.title,vat: cat.title,gen: dat.heading,url:sub.url });
+      }
+      
+    })
+   
+  })
+ 
+})
+console.log(result);
