@@ -10,7 +10,7 @@ const Button = ({children,bg,color,width='fit-content',border="none",height="aut
   
   return (
     <motion.button whileHover={{ filter: 'contrast(70%)' }} 
-      className={className} style={{ background: backgroundColor, color: fontColor, width: width, border: border, height: height, padding: "8px 19px", fontWeight: 700 }} onClick={cb}>{children}
+      className={className} style={{ background: backgroundColor, color: fontColor, width: width, border: border, height: height, padding: "8px 19px", fontWeight: 700,whiteSpace:'nowrap' }} onClick={cb}>{children}
      </motion.button>
   )
 }

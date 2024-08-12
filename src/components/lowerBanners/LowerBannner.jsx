@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Button from "../Button/Button";
 import "./lowerbanner.css";
 
@@ -11,7 +12,10 @@ const LowerBannner = () => {
               <div className="info">
                   <h1 className="text-center" >FOR ALL THE <br /> SNEAKERHEADS</h1>
                   <p>YOUR ONE-STOP SNEAKER-SHOP</p>
-                  <div className="buttons d-flex gap-4"><Button  bg="black" color='white'>SHOP NOW</Button><Button  bg="black" color='white'>EXPLORE MORE</Button></div>
+          <div className="buttons d-flex gap-4">
+          <Link to='/search?q=women'><div className="buttons d-flex gap-4"><Button  bg="black" color='white'>SHOP NOW</Button></div></Link>
+          <Link to='/search?q=unisex'> <Button bg="black" color='white'>EXPLORE MORE</Button></Link>
+          </div>
               </div>
       </div>
 
@@ -20,7 +24,7 @@ const LowerBannner = () => {
               <div className="info">
                   <h1 className="text-center" >TRAVEL IN STYLE</h1>
                   <p>GEAR UP FOR YOUR NEXT ADVENTURE</p>
-                  <div className="buttons d-flex gap-4"><Button  bg="black" color='white'>SHOP NOW</Button></div>
+                  <Link to='/search?q=men'><div className="buttons d-flex gap-4"><Button  bg="black" color='white'>SHOP NOW</Button></div></Link>
               </div>
       </div>
     </div>

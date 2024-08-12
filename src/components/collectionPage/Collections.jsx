@@ -41,7 +41,7 @@ const Collections2 = () => {
                   <div className="coll_info d-flex flex-column align-items-center">
                       <h4>BLKTOP RIDER</h4>
                       <p>A CONTEMPORARY CLASSIC </p>
-                      <Button bg="black" color="white" width="300px">SHOP NOW</Button>
+                      <Link to='/search?q=men'><Button bg="black" color="white" width="300px">SHOP NOW</Button></Link>
                      
                     </div>
               </div>
@@ -50,7 +50,7 @@ const Collections2 = () => {
                   <div className="coll_info d-flex flex-column align-items-center">
                       <h4>TERRACE SHOES</h4>
                       <p>STRAIGHT FROM THE ARCHIVES </p>
-                      <Button bg="black" color="white" width="300px">SHOP NOW</Button>
+                      <Link to='/search?q=men'><Button bg="black" color="white" width="300px">SHOP NOW</Button></Link>
                      
                     </div>
               </div>
